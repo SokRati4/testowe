@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $sql = "UPDATE contacts SET first_name='$first_name', last_name='$last_name', email='$email', phone='$phone' WHERE id=$id";
     if ($conn->query($sql) === TRUE) {
-        header('Location: index.php');
+        header('Location: index.php?msg=Contact updated successfully');
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
