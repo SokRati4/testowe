@@ -1,7 +1,7 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
+$servername = "adress-book-db.mysql.database.azure.com";
+$username = "adminuser";
+$password = "Haslo123";
 $dbname = "address_book";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
