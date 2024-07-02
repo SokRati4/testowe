@@ -25,13 +25,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             var email = document.forms["contactForm"]["email"].value;
             var phone = document.forms["contactForm"]["phone"].value;
             var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            var phonePattern = /^[0-9]{10}$/;
+            var phonePattern = /^[0-9]{9}$/;
             if (!emailPattern.test(email)) {
                 alert("Invalid email format");
                 return false;
             }
             if (!phonePattern.test(phone)) {
-                alert("Phone number must be 10 digits");
+                alert("Phone number must be 9 digits");
                 return false;
             }
             return true;
