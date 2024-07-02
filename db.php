@@ -1,5 +1,5 @@
 <?php
-$servername = "adress-book-db.mysql.database.azure.com";
+$servername = "app-chmurowe-db.mysql.database.azure.com";
 $username = "adminuser";
 $password = "Haslo123";
 $dbname = "address_book";
