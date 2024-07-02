@@ -27,6 +27,15 @@ $msg = isset($_GET['msg']) ? $_GET['msg'] : '';
         $(document).ready(function() {
             $("#contactsTable").tablesorter();
         });
+
+        function confirmDeletion(id) {
+            var password = prompt("Please enter your password to delete this contact:");
+            if (password == "Haslo123") {
+                window.location.href = 'delete.php?id=' + id + '&pwd=' + password;
+            } else {
+                alert("Incorrect password. Contact not deleted.");
+            }
+        }
     </script>
 </head>
 <body>
@@ -59,7 +68,7 @@ $msg = isset($_GET['msg']) ? $_GET['msg'] : '';
                     <td><?php echo $row['phone']; ?></td>
                     <td>
                         <a href="edit.php?id=<?php echo $row['id']; ?>" class="btn btn-warning">Edit</a>
-                        <a href="delete.php?id=<?php echo $row['id']; ?>" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this contact?');">Delete</a>
+                        <button class="btn btn-danger" onclick="confirmDeletion(<?php echo $row['id']; ?>)">Delete</button>
                     </td>
                 </tr>
                 <?php endwhile; ?>
